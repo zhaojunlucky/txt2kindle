@@ -36,7 +36,7 @@ func NewTxt(filePath string, authors []string) *Txt {
 
 func (txt *Txt)ConvertAsKindle(saveDir string)  {
 	kindleFilePath := path.Join(saveDir, fmt.Sprintf("%s.azw3", txt.Title))
-	fmt.Printf("Saving kindle file to %s", kindleFilePath)
+	fmt.Printf("Saving kindle file to %s\n", kindleFilePath)
 	chapters := make([]mobi.Chapter, len(txt.Chapters))
 
 	for i := 0; i < len(txt.Chapters); i++ {
@@ -76,6 +76,7 @@ func (txt *Txt)ConvertAsKindle(saveDir string)  {
 	if err != nil {
 		panic(err)
 	}
+	fmt.Println("done!")
 }
 
 func (txt *Txt) Parse(titlePatternFile string) {
