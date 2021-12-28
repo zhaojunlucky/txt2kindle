@@ -12,19 +12,19 @@ import (
 
 type ChapterTitle struct {
 	MaxLength int
-	Patterns []*regexp.Regexp
+	Patterns  []*regexp.Regexp
 }
 
 func NewChapterTitle(patternFile string) *ChapterTitle {
-	chapterTitle :=  &ChapterTitle{
+	chapterTitle := &ChapterTitle{
 		MaxLength: 60,
-		Patterns: []*regexp.Regexp{},
+		Patterns:  []*regexp.Regexp{},
 	}
 	chapterTitle.parsePatterns(patternFile)
 	return chapterTitle
 }
 
-func (chapterTitle *ChapterTitle)parsePatterns(patternFile string) {
+func (chapterTitle *ChapterTitle) parsePatterns(patternFile string) {
 	fileEnc := util.DetectFileEnc(patternFile)
 
 	file, err := os.Open(patternFile)
@@ -42,7 +42,7 @@ func (chapterTitle *ChapterTitle)parsePatterns(patternFile string) {
 		line = strings.TrimSpace(line)
 		if strings.HasPrefix(line, "#") {
 			log.Printf("skip comment line %s\n", line)
-		} else {
+		} else if len(line) > 0 {
 			pattern, err := regexp.Compile(line)
 			if err != nil {
 				log.Fatal(err)
@@ -57,7 +57,7 @@ func (chapterTitle *ChapterTitle)parsePatterns(patternFile string) {
 	}
 }
 
-func (chapterTitle *ChapterTitle)IsTitle(line string) bool {
+func (chapterTitle *ChapterTitle) IsTitle(line string) bool {
 	if line == "" {
 		return false
 	}

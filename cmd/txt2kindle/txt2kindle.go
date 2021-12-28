@@ -32,7 +32,6 @@ func main() {
 		panic("input txt file path doesn't exist, " + txtFilePath)
 	}
 
-
 	txtObj := txt.NewTxt(txtFilePath, []string{"MagicWorldZ"})
 	txtObj.Parse(chapterFilePath)
 
@@ -52,7 +51,7 @@ func confirmConvert(txtObj *txt.Txt) bool {
 	}
 	fmt.Printf("\t...\n")
 
-	end := int(math.Max(float64(begin), float64(chapterCnt - 8)))
+	end := int(math.Max(float64(begin), float64(chapterCnt-8)))
 	for i := end; i < chapterCnt; i++ {
 		fmt.Printf("\t%s\n", txtObj.Chapters[i].Title)
 	}
