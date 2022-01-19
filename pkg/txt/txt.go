@@ -4,7 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"github.com/leotaku/mobi"
-	"github.com/txt2kindle/pkg/util"
+	"github.com/zhaojunlucky/txt2kindle/pkg/util"
 	"golang.org/x/text/language"
 	"golang.org/x/text/transform"
 	"log"
@@ -17,9 +17,9 @@ import (
 )
 
 type Txt struct {
-	Title string
+	Title    string
 	FilePath string
-	Authors []string
+	Authors  []string
 	Chapters []*TxtChapter
 }
 
@@ -27,14 +27,14 @@ func NewTxt(filePath string, authors []string) *Txt {
 	title := filepath.Base(filePath)
 	title = strings.TrimSuffix(title, ".txt")
 	return &Txt{
-		Title: title,
+		Title:    title,
 		FilePath: filePath,
-		Authors: authors,
+		Authors:  authors,
 		Chapters: []*TxtChapter{},
 	}
 }
 
-func (txt *Txt)ConvertAsKindle(saveDir string)  {
+func (txt *Txt) ConvertAsKindle(saveDir string) {
 	kindleFilePath := path.Join(saveDir, fmt.Sprintf("%s.azw3", txt.Title))
 	fmt.Printf("Saving kindle file to %s\n", kindleFilePath)
 	chapters := make([]mobi.Chapter, len(txt.Chapters))
@@ -115,9 +115,8 @@ type TxtChapter struct {
 }
 
 func newTxtChapter(title string) *TxtChapter {
-	return &TxtChapter {
+	return &TxtChapter{
 		Title: title,
 		Lines: []string{},
 	}
 }
-

@@ -1,6 +1,7 @@
-github.com/leotaku/mobi v0.0.0-20210521204648-1e0b6b1462b0 h1:+9O0BGpTNT1MJrMnBVUiKSznQ+GZKOIFaCqFI57J+Yc=
-github.com/leotaku/mobi v0.0.0-20210521204648-1e0b6b1462b0/go.mod h1:JwlrCjmFTdgBpRBpZaEWzPcCKC3RVh5zSCSbCEpKscA=
-golang.org/x/text v0.3.5/go.mod h1:5Zoc/QRtKVWzQhOtBMvqHzDpF6irO9z98xDceosuGiQ=
-golang.org/x/text v0.3.6 h1:aRYxNxv6iGQlyVaZmk6ZgYEDa+Jg18DxebPSrd6bg1M=
-golang.org/x/text v0.3.6/go.mod h1:5Zoc/QRtKVWzQhOtBMvqHzDpF6irO9z98xDceosuGiQ=
+github.com/leotaku/mobi v0.0.0-20211229161609-765f28ff1457 h1:kFV3RufaLq26MT6kPWUzUK+7K27kaBLaBZyZIzG50j8=
+github.com/leotaku/mobi v0.0.0-20211229161609-765f28ff1457/go.mod h1:aPjSURhp6tj0b/dLHyjzeygcitkmvO2/SO368XiPtrs=
+github.com/zhaojunlucky/golib v0.0.0-20220119094410-d668d73a90e7 h1:SRSlPvyWOLGx+lIRcCpLO0aTJysTtg0XJSmkeS5+Rcw=
+github.com/zhaojunlucky/golib v0.0.0-20220119094410-d668d73a90e7/go.mod h1:sIZcyfMzc3qLkNgQM+4AfSmdY/F94TBsAhavt5ns9FA=
+golang.org/x/text v0.3.7 h1:olpwvP2KacW1ZWvsR7uQhoyTYvKAupfQrRGBFM352Gk=
+golang.org/x/text v0.3.7/go.mod h1:u+2+/6zg+i71rQMx5EYifcz6MCKuco9NR6JIITiCfzQ=
 golang.org/x/tools v0.0.0-20180917221912-90fa682c2a6e/go.mod h1:n7NCudcB/nEzxVGmLbDWY5pfWTLqBcC2KZ6jyYvM4mQ=

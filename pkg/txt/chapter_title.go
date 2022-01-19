@@ -2,7 +2,7 @@ package txt
 
 import (
 	"bufio"
-	"github.com/txt2kindle/pkg/util"
+	"github.com/zhaojunlucky/txt2kindle/pkg/util"
 	"golang.org/x/text/transform"
 	"log"
 	"os"

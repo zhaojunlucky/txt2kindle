@@ -1,31 +1,20 @@
 package util
 
 import (
-	"bufio"
+	"github.com/zhaojunlucky/golib/pkg/text"
 	"golang.org/x/text/encoding"
 	"golang.org/x/text/encoding/simplifiedchinese"
-	"log"
-	"os"
-	"unicode/utf8"
 )
 
 func DetectFileEnc(txtFile string) encoding.Encoding {
-	file, err := os.Open(txtFile)
+	var encDetect = text.NewBytesEncodingDetect()
+	enc, err := encDetect.DetectFileEncoding(txtFile)
 	if err != nil {
-		log.Fatal(err)
+		return encoding.Nop
 	}
-	defer file.Close()
-
-	scanner := bufio.NewScanner(file)
-	// optionally, resize scanner's capacity for lines over 64K, see next example
-	for scanner.Scan() {
-		line := scanner.Text()
-		b := []byte(line)
-
-		if !utf8.FullRune(b) {
-			return simplifiedchinese.GB18030
-		}
-
+	// promote to GB18030
+	if enc == simplifiedchinese.HZGB2312 {
+		return simplifiedchinese.GB18030
 	}
-	return encoding.Nop
+	return enc
 }

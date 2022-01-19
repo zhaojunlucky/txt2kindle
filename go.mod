@@ -1,8 +1,9 @@
-module github.com/txt2kindle
+module github.com/zhaojunlucky/txt2kindle
 
-go 1.16
+go 1.17
 
 require (
-	github.com/leotaku/mobi v0.0.0-20210521204648-1e0b6b1462b0
-	golang.org/x/text v0.3.6
+	github.com/leotaku/mobi v0.0.0-20211229161609-765f28ff1457
+	github.com/zhaojunlucky/golib v0.0.0-20220119094410-d668d73a90e7
+	golang.org/x/text v0.3.7
 )

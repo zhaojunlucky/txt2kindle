@@ -4,7 +4,8 @@ import (
 	"bufio"
 	"flag"
 	"fmt"
-	"github.com/txt2kindle/pkg/txt"
+	"github.com/zhaojunlucky/txt2kindle/pkg/txt"
+	"log"
 	"math"
 	"os"
 	"os/signal"
@@ -21,15 +22,19 @@ func main() {
 	txtFilePath := *txtFileFlag
 
 	if len(chapterFilePath) == 0 {
-		panic("invalid input chapter pattern file path")
+		flag.PrintDefaults()
+		log.Fatalf("invalid input chapter pattern file path")
 	} else if _, err := os.Stat(chapterFilePath); err != nil {
-		panic("input chapter pattern file path doesn't exist, " + chapterFilePath)
+		flag.PrintDefaults()
+		log.Fatalf("input chapter pattern file path doesn't exist, " + chapterFilePath)
 	}
 
 	if len(txtFilePath) == 0 {
-		panic("invalid input txt file to convert")
+		flag.PrintDefaults()
+		log.Fatalf("invalid input txt file to convert")
 	} else if _, err := os.Stat(txtFilePath); err != nil {
-		panic("input txt file path doesn't exist, " + txtFilePath)
+		flag.PrintDefaults()
+		log.Fatalf("input txt file path doesn't exist, " + txtFilePath)
 	}
 
 	txtObj := txt.NewTxt(txtFilePath, []string{"MagicWorldZ"})
